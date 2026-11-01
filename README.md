@@ -77,7 +77,7 @@ The table below benchmarks enterprise SaaS and managed cloud catalog platforms, 
 
 ## 🔓 Open-Source GitHub Projects
 
-The table below benchmarks top open-source metadata platforms, Apache Iceberg REST catalogs, data lake version control systems, and data lineage collectors, sorted descending by GitHub Stars_Count:
+The table below benchmarks top open-source metadata platforms, Apache Iceberg REST catalogs, data lake version control systems, and data lineage collectors, sorted descending by GitHub_Stars_Count:
 
 | Project | ⭐ GitHub_Stars | 🏗️ Architecture & Category | 📜 License | 💡 Core Strengths & Use Cases |
 | :--- | :--- | :--- | :--- | :--- |
