@@ -1,128 +1,115 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="360" style="background:#0b0f19;border-radius:12px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="100%" height="200">
   <defs>
-    <!-- Background Gradients -->
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0a0e1a"/>
-      <stop offset="50%" stop-color="#111827"/>
-      <stop offset="100%" stop-color="#0b1329"/>
+    <!-- Background Linear Gradient -->
+    <linearGradient id="bannerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1e1b4b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1" />
     </linearGradient>
+
+    <!-- Accent Gradient for Highlights -->
     <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38bdf8"/>
-      <stop offset="50%" stop-color="#818cf8"/>
-      <stop offset="100%" stop-color="#c084fc"/>
+      <stop offset="0%" style="stop-color:#38bdf8;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#818cf8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c084fc;stop-opacity:1" />
     </linearGradient>
-    <linearGradient id="gridGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.15"/>
-      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.0"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="50%" cy="30%" r="50%">
-      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
-    </radialGradient>
+
+    <style>
+      .title {
+        font: bold 32px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        fill: #ffffff;
+      }
+      .subtitle {
+        font: 15px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        fill: #94a3b8;
+      }
+      .badge-text {
+        font: bold 11px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        fill: #38bdf8;
+      }
+      .pill-text {
+        font: 600 11px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        fill: #cbd5e1;
+      }
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-6px); }
+        100% { transform: translateY(0px); }
+      }
+      .floating {
+        animation: float 4s ease-in-out infinite;
+      }
+    </style>
   </defs>
 
-  <style>
-    .pulse-node {
-      animation: pulse 3s infinite ease-in-out;
-    }
-    .flow-line {
-      stroke-dasharray: 8 8;
-      animation: dash 25s linear infinite;
-    }
-    .flow-line-rev {
-      stroke-dasharray: 6 6;
-      animation: dashRev 20s linear infinite;
-    }
-    .float-card {
-      animation: float 6s ease-in-out infinite;
-    }
-    .float-card-slow {
-      animation: float 8s ease-in-out infinite reverse;
-    }
-    @keyframes dash {
-      to { stroke-dashoffset: -1000; }
-    }
-    @keyframes dashRev {
-      to { stroke-dashoffset: 1000; }
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 0.3; transform: scale(0.98); }
-      50% { opacity: 0.8; transform: scale(1.02); }
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
-    }
-  </style>
+  <!-- Banner Background Card -->
+  <rect width="800" height="200" rx="15" fill="url(#bannerGrad)" stroke="#312e81" stroke-width="1.5" />
 
-  <!-- Background Layer -->
-  <rect width="100%" height="100%" fill="url(#bgGrad)" rx="12"/>
-  <rect width="100%" height="100%" fill="url(#glow)" rx="12"/>
-
-  <!-- Subtle Animated Flow Lines in Background -->
-  <g opacity="0.4">
-    <path class="flow-line" d="M 50 80 Q 300 30 600 80 T 1150 80" fill="none" stroke="#38bdf8" stroke-width="1.5"/>
-    <path class="flow-line-rev" d="M 50 280 Q 300 330 600 280 T 1150 280" fill="none" stroke="#818cf8" stroke-width="1.5"/>
-    <path class="flow-line" d="M 100 180 C 400 260 800 100 1100 180" fill="none" stroke="#c084fc" stroke-width="1.2"/>
+  <!-- Dynamic Glowing Mesh Grid Dots & Orbs in Background -->
+  <g opacity="0.35">
+    <circle cx="80" cy="40" r="1.5" fill="#38bdf8" />
+    <circle cx="140" cy="40" r="1.5" fill="#38bdf8" />
+    <circle cx="200" cy="40" r="1.5" fill="#38bdf8" />
+    <circle cx="680" cy="40" r="1.5" fill="#c084fc" />
+    <circle cx="740" cy="40" r="1.5" fill="#c084fc" />
+    <circle cx="80" cy="160" r="1.5" fill="#38bdf8" />
+    <circle cx="140" cy="160" r="1.5" fill="#38bdf8" />
+    <circle cx="680" cy="160" r="1.5" fill="#c084fc" />
+    <circle cx="740" cy="160" r="1.5" fill="#c084fc" />
   </g>
 
-  <!-- Dynamic Animated Floating Metadata Nodes & Chips (Background Elements) -->
-  <g class="float-card" opacity="0.65">
-    <rect x="70" y="45" width="130" height="32" rx="16" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
-    <circle cx="86" cy="61" r="5" fill="#38bdf8"/>
-    <text x="100" y="66" fill="#94a3b8" font-size="12" font-weight="600">Data Lineage</text>
-  </g>
+  <!-- Dynamic Animated Background Orbs / Flow Elements (Kept safely in background) -->
+  <circle cx="710" cy="55" r="35" fill="#6366f1" opacity="0.25">
+    <animate attributeName="r" values="30;42;30" dur="4s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.15;0.35;0.15" dur="4s" repeatCount="indefinite" />
+  </circle>
 
-  <g class="float-card-slow" opacity="0.65">
-    <rect x="1000" y="45" width="130" height="32" rx="16" fill="#1e293b" stroke="#c084fc" stroke-width="1"/>
-    <circle cx="1016" cy="61" r="5" fill="#c084fc"/>
-    <text x="1030" y="66" fill="#94a3b8" font-size="12" font-weight="600">Active Metadata</text>
-  </g>
+  <circle cx="740" cy="135" r="50" fill="#38bdf8" opacity="0.15">
+    <animate attributeName="r" values="45;55;45" dur="5s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.1;0.25;0.1" dur="5s" repeatCount="indefinite" />
+  </circle>
 
-  <g class="float-card" opacity="0.65">
-    <rect x="90" y="275" width="140" height="32" rx="16" fill="#1e293b" stroke="#818cf8" stroke-width="1"/>
-    <circle cx="106" cy="291" r="5" fill="#818cf8"/>
-    <text x="120" y="296" fill="#94a3b8" font-size="12" font-weight="600">Apache Iceberg</text>
-  </g>
+  <circle cx="60" cy="140" r="45" fill="#818cf8" opacity="0.12">
+    <animate attributeName="r" values="40;50;40" dur="6s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.08;0.2;0.08" dur="6s" repeatCount="indefinite" />
+  </circle>
 
-  <g class="float-card-slow" opacity="0.65">
-    <rect x="980" y="275" width="150" height="32" rx="16" fill="#1e293b" stroke="#34d399" stroke-width="1"/>
-    <circle cx="996" cy="291" r="5" fill="#34d399"/>
-    <text x="1010" y="296" fill="#94a3b8" font-size="12" font-weight="600">Data Governance</text>
-  </g>
+  <!-- Dynamic Connecting Line Pattern with Flow Pulsing -->
+  <path d="M 620 60 Q 670 95 720 70 T 770 120" fill="none" stroke="url(#accentGrad)" stroke-width="1.5" opacity="0.4" stroke-dasharray="4,4">
+    <animate attributeName="stroke-dashoffset" values="0;40" dur="3s" repeatCount="indefinite" />
+  </path>
 
-  <!-- Foreground Main Title & Badges (Rock solid foreground clarity) -->
-  <g text-anchor="middle">
-    <!-- Top Category Badge -->
-    <rect x="475" y="45" width="250" height="28" rx="14" fill="#1e1b4b" stroke="#6366f1" stroke-width="1.5"/>
-    <text x="600" y="64" fill="#a5b4fc" font-size="12" font-weight="700" letter-spacing="1.5">OPEN METADATA ECOSYSTEM</text>
+  <!-- Foreground Group: Content & Typography (Never covered or obscured) -->
+  <g transform="translate(48, 32)">
+    <!-- Category Pill Badge -->
+    <rect x="0" y="0" width="190" height="22" rx="11" fill="#1e1b4b" stroke="#4338ca" stroke-width="1" />
+    <circle cx="12" cy="11" r="3.5" fill="#38bdf8">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <text x="24" y="15" class="badge-text" letter-spacing="0.5">OPEN METADATA ECOSYSTEM</text>
 
-    <!-- Main Title -->
-    <text x="600" y="145" fill="url(#accentGrad)" font-size="40" font-weight="800" letter-spacing="-0.5">
-      Open Data Catalog &amp; Metadata
-    </text>
-    <text x="600" y="195" fill="#ffffff" font-size="34" font-weight="800" letter-spacing="-0.5">
-      Management Architecture
-    </text>
+    <!-- Main Title with Subtle Dynamic Floating Animation -->
+    <g class="floating">
+      <text x="0" y="58" class="title">Awesome Open Data Catalog</text>
+      <text x="0" y="94" class="title" fill="#e2e8f0">&amp; Metadata Management</text>
+    </g>
 
     <!-- Subtitle -->
-    <text x="600" y="240" fill="#94a3b8" font-size="16" font-weight="400">
-      Curated Catalog Platforms &bull; Automated Lineage &bull; Iceberg REST Catalogs &bull; Governance
-    </text>
+    <text x="0" y="124" class="subtitle">Curated SaaS Platforms, Iceberg REST Catalogs &amp; Active Lineage</text>
 
-    <!-- Bottom Feature Pills in Center Foreground -->
-    <g font-size="12" font-weight="600" fill="#cbd5e1">
-      <rect x="360" y="278" width="105" height="26" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
-      <text x="412" y="295">🔍 Discovery</text>
+    <!-- Interactive / Status Pills in Foreground -->
+    <g transform="translate(0, 138)">
+      <rect x="0" y="0" width="95" height="20" rx="5" fill="#1e293b" stroke="#334155" stroke-width="1" />
+      <text x="10" y="14" class="pill-text">🔍 Discovery</text>
 
-      <rect x="475" y="278" width="115" height="26" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
-      <text x="532" y="295">⛓️ Data Lineage</text>
+      <rect x="105" y="0" width="88" height="20" rx="5" fill="#1e293b" stroke="#334155" stroke-width="1" />
+      <text x="115" y="14" class="pill-text">⛓️ Lineage</text>
 
-      <rect x="600" y="278" width="110" height="26" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
-      <text x="655" y="295">🛡️ Governance</text>
+      <rect x="203" y="0" width="108" height="20" rx="5" fill="#1e293b" stroke="#334155" stroke-width="1" />
+      <text x="213" y="14" class="pill-text">🛡️ Governance</text>
 
-      <rect x="720" y="278" width="120" height="26" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
-      <text x="780" y="295">⚡ REST Catalogs</text>
+      <rect x="321" y="0" width="118" height="20" rx="5" fill="#1e293b" stroke="#334155" stroke-width="1" />
+      <text x="331" y="14" class="pill-text">⚡ Iceberg REST</text>
     </g>
   </g>
 </svg>
